@@ -1,0 +1,250 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+$	tags	/^CppLinuxSerial	SerialPort.cpp	\/^namespace CppLinuxSerial {$\/;"	n	file:$/;"	m	namespace:CppLinuxSerial	file:
+$	tags	/^CppLinuxSerial	SerialPort.hpp	\/^namespace CppLinuxSerial {$\/;"	n$/;"	m	namespace:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial	file:
+$	tags	/^CppLinuxSerial::BaudRate	SerialPort.hpp	\/^enum class BaudRate {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16	file:	access:private
+$	tags	/^CppLinuxSerial::BaudRateType	SerialPort.hpp	\/^enum class BaudRateType {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType	file:	access:private
+$	tags	/^CppLinuxSerial::NumDataBits	SerialPort.hpp	\/^enum class NumDataBits {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17	file:	access:private
+$	tags	/^CppLinuxSerial::NumStopBits	SerialPort.hpp	\/^enum class NumStopBits {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18::__anon19	file:	access:private
+$	tags	/^CppLinuxSerial::Parity	SerialPort.hpp	\/^enum class Parity {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort	SerialPort.hpp	\/^class SerialPort {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18::__anon19::__anon20::__anon21	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::Available	SerialPort.cpp	\/^int32_t SerialPort::Available() {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:()$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::Close	SerialPort.cpp	\/^void SerialPort::Close() {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:()$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::GetState	SerialPort.cpp	\/^State SerialPort::GetState() {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:()$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::SerialPort	SerialPort.cpp	\/^SerialPort::SerialPort() {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:()$/;"	m	class:CppLinuxSerial::__anon1	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::SetBaudRate	SerialPort.cpp	\/^void SerialPort::SetBaudRate(BaudRate baudRate)	{		$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(BaudRate baudRate)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::SetBaudRate	SerialPort.cpp	\/^void SerialPort::SetBaudRate(speed_t baudRate)	{		$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(speed_t baudRate)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::SetDevice	SerialPort.cpp	\/^void SerialPort::SetDevice(const std::string& device) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& device)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::SetEcho	SerialPort.cpp	\/^void SerialPort::SetEcho(bool value) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(bool value)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::SetNumDataBits	SerialPort.cpp	\/^void SerialPort::SetNumDataBits(NumDataBits numDataBits) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(NumDataBits numDataBits)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::SetNumStopBits	SerialPort.cpp	\/^void SerialPort::SetNumStopBits(NumStopBits numStopBits) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(NumStopBits numStopBits)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::SetParity	SerialPort.cpp	\/^void SerialPort::SetParity(Parity parity) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(Parity parity)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::SetTimeout	SerialPort.cpp	\/^void SerialPort::SetTimeout(int32_t timeout_ms) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(int32_t timeout_ms)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::Write	SerialPort.cpp	\/^void SerialPort::Write(const std::string& data) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& data)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::WriteBinary	SerialPort.cpp	\/^    void SerialPort::WriteBinary(const std::vector<uint8_t>& data) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::vector<uint8_t>& data)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11	file:	access:private
+$	tags	/^CppLinuxSerial::SerialPort::~SerialPort	SerialPort.cpp	\/^SerialPort::~SerialPort() {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:()$/;"	m	class:CppLinuxSerial::__anon1::__anon2	file:	access:private
+$	tags	/^CppLinuxSerial::State	SerialPort.hpp	\/^enum class State {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18::__anon19::__anon20	file:	access:private
+Available	SerialPort.cpp	/^int32_t SerialPort::Available() {$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+BOTHER	SerialPort.cpp	32;"	d	file:
+B_0	SerialPort.hpp	/^    B_0,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_110	SerialPort.hpp	/^    B_110,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_115200	SerialPort.hpp	/^    B_115200,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_1200	SerialPort.hpp	/^    B_1200,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_134	SerialPort.hpp	/^    B_134,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_150	SerialPort.hpp	/^    B_150,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_1800	SerialPort.hpp	/^    B_1800,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_19200	SerialPort.hpp	/^    B_19200,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_200	SerialPort.hpp	/^    B_200,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_230400	SerialPort.hpp	/^    B_230400,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_2400	SerialPort.hpp	/^    B_2400,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_300	SerialPort.hpp	/^    B_300,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_38400	SerialPort.hpp	/^    B_38400,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_460800	SerialPort.hpp	/^    B_460800,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_4800	SerialPort.hpp	/^    B_4800,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_50	SerialPort.hpp	/^    B_50,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_57600	SerialPort.hpp	/^    B_57600,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_600	SerialPort.hpp	/^    B_600,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_75	SerialPort.hpp	/^    B_75,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_9600	SerialPort.hpp	/^    B_9600,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+B_CUSTOM	SerialPort.hpp	/^    B_CUSTOM, \/\/ Placeholder$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+BaudRate	SerialPort.hpp	/^enum class BaudRate {$/;"	c	namespace:CppLinuxSerial
+BaudRateType	SerialPort.hpp	/^enum class BaudRateType {$/;"	c	namespace:CppLinuxSerial
+BaudRateType	tags	/^CppLinuxSerial::BaudRateType	SerialPort.hpp	\/^enum class BaudRateType {$\/;"	c	namespace:CppLinuxSerial$/;"	c	namespace:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial	file:
+CLOSED	SerialPort.hpp	/^    CLOSED,$/;"	m	class:CppLinuxSerial::State	access:private
+CUSTOM	SerialPort.hpp	/^    CUSTOM,$/;"	m	class:CppLinuxSerial::BaudRateType	access:private
+Close	SerialPort.cpp	/^void SerialPort::Close() {$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+ConfigureTermios	SerialPort.cpp	/^void SerialPort::ConfigureTermios()$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+CppLinuxSerial	Exception.hpp	/^namespace CppLinuxSerial {$/;"	n
+CppLinuxSerial	SerialPort.cpp	/^namespace CppLinuxSerial {$/;"	n	file:
+CppLinuxSerial	SerialPort.hpp	/^namespace CppLinuxSerial {$/;"	n
+CppLinuxSerial	tags	/^CppLinuxSerial	SerialPort.cpp	\/^namespace CppLinuxSerial {$\/;"	n	file:$/;"	n	file:
+CppLinuxSerial	tags	/^CppLinuxSerial	SerialPort.hpp	\/^namespace CppLinuxSerial {$\/;"	n$/;"	n	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15	file:	access:private
+CppLinuxSerial::$	tags	/^CppLinuxSerial	SerialPort.cpp	\/^namespace CppLinuxSerial {$\/;"	n	file:$/;"	m	namespace:CppLinuxSerial	file:
+CppLinuxSerial::BaudRate	SerialPort.hpp	/^enum class BaudRate {$/;"	c	namespace:CppLinuxSerial
+CppLinuxSerial::BaudRate::B_0	SerialPort.hpp	/^    B_0,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_110	SerialPort.hpp	/^    B_110,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_115200	SerialPort.hpp	/^    B_115200,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_1200	SerialPort.hpp	/^    B_1200,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_134	SerialPort.hpp	/^    B_134,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_150	SerialPort.hpp	/^    B_150,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_1800	SerialPort.hpp	/^    B_1800,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_19200	SerialPort.hpp	/^    B_19200,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_200	SerialPort.hpp	/^    B_200,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_230400	SerialPort.hpp	/^    B_230400,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_2400	SerialPort.hpp	/^    B_2400,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_300	SerialPort.hpp	/^    B_300,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_38400	SerialPort.hpp	/^    B_38400,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_460800	SerialPort.hpp	/^    B_460800,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_4800	SerialPort.hpp	/^    B_4800,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_50	SerialPort.hpp	/^    B_50,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_57600	SerialPort.hpp	/^    B_57600,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_600	SerialPort.hpp	/^    B_600,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_75	SerialPort.hpp	/^    B_75,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_9600	SerialPort.hpp	/^    B_9600,$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRate::B_CUSTOM	SerialPort.hpp	/^    B_CUSTOM, \/\/ Placeholder$/;"	m	class:CppLinuxSerial::BaudRate	access:private
+CppLinuxSerial::BaudRateType	SerialPort.hpp	/^enum class BaudRateType {$/;"	c	namespace:CppLinuxSerial
+CppLinuxSerial::BaudRateType::CUSTOM	SerialPort.hpp	/^    CUSTOM,$/;"	m	class:CppLinuxSerial::BaudRateType	access:private
+CppLinuxSerial::BaudRateType::STANDARD	SerialPort.hpp	/^    STANDARD,$/;"	m	class:CppLinuxSerial::BaudRateType	access:private
+CppLinuxSerial::Exception	Exception.hpp	/^class Exception : public std::runtime_error {$/;"	c	namespace:CppLinuxSerial	inherits:std::runtime_error
+CppLinuxSerial::Exception::Exception	Exception.hpp	/^    Exception(const char *file, int line, const std::string &arg) :$/;"	f	class:CppLinuxSerial::Exception	access:public	signature:(const char *file, int line, const std::string &arg)
+CppLinuxSerial::Exception::msg_	Exception.hpp	/^    std::string msg_;$/;"	m	class:CppLinuxSerial::Exception	access:private
+CppLinuxSerial::Exception::~Exception	Exception.hpp	/^    ~Exception() throw() {}$/;"	f	class:CppLinuxSerial::Exception	access:public	signature:()
+CppLinuxSerial::NumDataBits	SerialPort.hpp	/^enum class NumDataBits {$/;"	c	namespace:CppLinuxSerial
+CppLinuxSerial::NumDataBits::EIGHT	SerialPort.hpp	/^    EIGHT,$/;"	m	class:CppLinuxSerial::NumDataBits	access:private
+CppLinuxSerial::NumDataBits::FIVE	SerialPort.hpp	/^    FIVE,$/;"	m	class:CppLinuxSerial::NumDataBits	access:private
+CppLinuxSerial::NumDataBits::SEVEN	SerialPort.hpp	/^    SEVEN,$/;"	m	class:CppLinuxSerial::NumDataBits	access:private
+CppLinuxSerial::NumDataBits::SIX	SerialPort.hpp	/^    SIX,$/;"	m	class:CppLinuxSerial::NumDataBits	access:private
+CppLinuxSerial::NumStopBits	SerialPort.hpp	/^enum class NumStopBits {$/;"	c	namespace:CppLinuxSerial
+CppLinuxSerial::NumStopBits::ONE	SerialPort.hpp	/^    ONE,$/;"	m	class:CppLinuxSerial::NumStopBits	access:private
+CppLinuxSerial::NumStopBits::TWO	SerialPort.hpp	/^    TWO,$/;"	m	class:CppLinuxSerial::NumStopBits	access:private
+CppLinuxSerial::Parity	SerialPort.hpp	/^enum class Parity {$/;"	c	namespace:CppLinuxSerial
+CppLinuxSerial::Parity::EVEN	SerialPort.hpp	/^    EVEN,$/;"	m	class:CppLinuxSerial::Parity	access:private
+CppLinuxSerial::Parity::NONE	SerialPort.hpp	/^    NONE,$/;"	m	class:CppLinuxSerial::Parity	access:private
+CppLinuxSerial::Parity::ODD	SerialPort.hpp	/^    ODD,$/;"	m	class:CppLinuxSerial::Parity	access:private
+CppLinuxSerial::SerialPort	SerialPort.hpp	/^class SerialPort {$/;"	c	namespace:CppLinuxSerial
+CppLinuxSerial::SerialPort::Available	SerialPort.cpp	/^int32_t SerialPort::Available() {$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+CppLinuxSerial::SerialPort::Close	SerialPort.cpp	/^void SerialPort::Close() {$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+CppLinuxSerial::SerialPort::ConfigureTermios	SerialPort.cpp	/^void SerialPort::ConfigureTermios()$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+CppLinuxSerial::SerialPort::GetState	SerialPort.cpp	/^State SerialPort::GetState() {$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+CppLinuxSerial::SerialPort::GetTermios2	SerialPort.cpp	/^termios2 SerialPort::GetTermios2()$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+CppLinuxSerial::SerialPort::Open	SerialPort.cpp	/^void SerialPort::Open()$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+CppLinuxSerial::SerialPort::Read	SerialPort.cpp	/^void SerialPort::Read(std::string& data)$/;"	f	class:CppLinuxSerial::SerialPort	signature:(std::string& data)
+CppLinuxSerial::SerialPort::ReadBinary	SerialPort.cpp	/^void SerialPort::ReadBinary(std::vector<uint8_t>& data)$/;"	f	class:CppLinuxSerial::SerialPort	signature:(std::vector<uint8_t>& data)
+CppLinuxSerial::SerialPort::SerialPort	SerialPort.cpp	/^SerialPort::SerialPort() {$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+CppLinuxSerial::SerialPort::SerialPort	SerialPort.cpp	/^SerialPort::SerialPort(const std::string& device, BaudRate baudRate) :$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& device, BaudRate baudRate)
+CppLinuxSerial::SerialPort::SerialPort	SerialPort.cpp	/^SerialPort::SerialPort(const std::string& device, BaudRate baudRate, NumDataBits numDataBits, Parity parity, NumStopBits numStopBits) :$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& device, BaudRate baudRate, NumDataBits numDataBits, Parity parity, NumStopBits numStopBits)
+CppLinuxSerial::SerialPort::SerialPort	SerialPort.cpp	/^SerialPort::SerialPort(const std::string& device, speed_t baudRate) :$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& device, speed_t baudRate)
+CppLinuxSerial::SerialPort::SetBaudRate	SerialPort.cpp	/^void SerialPort::SetBaudRate(BaudRate baudRate)	{		$/;"	f	class:CppLinuxSerial::SerialPort	signature:(BaudRate baudRate)
+CppLinuxSerial::SerialPort::SetBaudRate	SerialPort.cpp	/^void SerialPort::SetBaudRate(speed_t baudRate)	{		$/;"	f	class:CppLinuxSerial::SerialPort	signature:(speed_t baudRate)
+CppLinuxSerial::SerialPort::SetDevice	SerialPort.cpp	/^void SerialPort::SetDevice(const std::string& device) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& device)
+CppLinuxSerial::SerialPort::SetEcho	SerialPort.cpp	/^void SerialPort::SetEcho(bool value) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(bool value)
+CppLinuxSerial::SerialPort::SetNumDataBits	SerialPort.cpp	/^void SerialPort::SetNumDataBits(NumDataBits numDataBits) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(NumDataBits numDataBits)
+CppLinuxSerial::SerialPort::SetNumStopBits	SerialPort.cpp	/^void SerialPort::SetNumStopBits(NumStopBits numStopBits) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(NumStopBits numStopBits)
+CppLinuxSerial::SerialPort::SetParity	SerialPort.cpp	/^void SerialPort::SetParity(Parity parity) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(Parity parity)
+CppLinuxSerial::SerialPort::SetTermios2	SerialPort.cpp	/^void SerialPort::SetTermios2(termios2 tty)$/;"	f	class:CppLinuxSerial::SerialPort	signature:(termios2 tty)
+CppLinuxSerial::SerialPort::SetTimeout	SerialPort.cpp	/^void SerialPort::SetTimeout(int32_t timeout_ms) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(int32_t timeout_ms)
+CppLinuxSerial::SerialPort::Write	SerialPort.cpp	/^void SerialPort::Write(const std::string& data) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& data)
+CppLinuxSerial::SerialPort::WriteBinary	SerialPort.cpp	/^    void SerialPort::WriteBinary(const std::vector<uint8_t>& data) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::vector<uint8_t>& data)
+CppLinuxSerial::SerialPort::baudRateCustom_	SerialPort.hpp	/^    speed_t baudRateCustom_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::baudRateStandard_	SerialPort.hpp	/^    BaudRate baudRateStandard_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::baudRateType_	SerialPort.hpp	/^    BaudRateType baudRateType_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::defaultBaudRate_	SerialPort.hpp	/^    static constexpr BaudRate defaultBaudRate_ = BaudRate::B_57600;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::defaultReadBufferSize_B_	SerialPort.hpp	/^    static constexpr unsigned char defaultReadBufferSize_B_ = 255;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::defaultTimeout_ms_	SerialPort.hpp	/^    static constexpr int32_t defaultTimeout_ms_ = -1;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::device_	SerialPort.hpp	/^    std::string device_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::echo_	SerialPort.hpp	/^    bool echo_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::fileDesc_	SerialPort.hpp	/^    int fileDesc_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::numDataBits_	SerialPort.hpp	/^    NumDataBits numDataBits_ = NumDataBits::EIGHT;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::numStopBits_	SerialPort.hpp	/^    NumStopBits numStopBits_ = NumStopBits::ONE;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::parity_	SerialPort.hpp	/^    Parity parity_ = Parity::NONE;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::readBufferSize_B_	SerialPort.hpp	/^    unsigned char readBufferSize_B_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::readBuffer_	SerialPort.hpp	/^    std::vector<char> readBuffer_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::state_	SerialPort.hpp	/^    State state_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::timeout_ms_	SerialPort.hpp	/^    int32_t timeout_ms_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+CppLinuxSerial::SerialPort::~SerialPort	SerialPort.cpp	/^SerialPort::~SerialPort() {$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+CppLinuxSerial::State	SerialPort.hpp	/^enum class State {$/;"	c	namespace:CppLinuxSerial
+CppLinuxSerial::State::CLOSED	SerialPort.hpp	/^    CLOSED,$/;"	m	class:CppLinuxSerial::State	access:private
+CppLinuxSerial::State::OPEN	SerialPort.hpp	/^    OPEN,$/;"	m	class:CppLinuxSerial::State	access:private
+CppLinuxSerial::__anon1::$	tags	/^CppLinuxSerial::SerialPort::SerialPort	SerialPort.cpp	\/^SerialPort::SerialPort() {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:()$/;"	m	class:CppLinuxSerial::__anon1	file:	access:private
+CppLinuxSerial::__anon1::__anon2::$	tags	/^CppLinuxSerial::SerialPort::~SerialPort	SerialPort.cpp	\/^SerialPort::~SerialPort() {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:()$/;"	m	class:CppLinuxSerial::__anon1::__anon2	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::$	tags	/^CppLinuxSerial::SerialPort::SetDevice	SerialPort.cpp	\/^void SerialPort::SetDevice(const std::string& device) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& device)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::$	tags	/^CppLinuxSerial::SerialPort::SetBaudRate	SerialPort.cpp	\/^void SerialPort::SetBaudRate(BaudRate baudRate)	{		$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(BaudRate baudRate)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::$	tags	/^CppLinuxSerial::SerialPort::SetBaudRate	SerialPort.cpp	\/^void SerialPort::SetBaudRate(speed_t baudRate)	{		$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(speed_t baudRate)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::$	tags	/^CppLinuxSerial::SerialPort::SetNumDataBits	SerialPort.cpp	\/^void SerialPort::SetNumDataBits(NumDataBits numDataBits) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(NumDataBits numDataBits)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::$	tags	/^CppLinuxSerial::SerialPort::SetParity	SerialPort.cpp	\/^void SerialPort::SetParity(Parity parity) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(Parity parity)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::$	tags	/^CppLinuxSerial::SerialPort::SetNumStopBits	SerialPort.cpp	\/^void SerialPort::SetNumStopBits(NumStopBits numStopBits) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(NumStopBits numStopBits)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::$	tags	/^CppLinuxSerial::SerialPort::SetEcho	SerialPort.cpp	\/^void SerialPort::SetEcho(bool value) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(bool value)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::$	tags	/^CppLinuxSerial::SerialPort::Write	SerialPort.cpp	\/^void SerialPort::Write(const std::string& data) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& data)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::$	tags	/^CppLinuxSerial::SerialPort::WriteBinary	SerialPort.cpp	\/^    void SerialPort::WriteBinary(const std::vector<uint8_t>& data) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::vector<uint8_t>& data)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::$	tags	/^CppLinuxSerial::SerialPort::Close	SerialPort.cpp	\/^void SerialPort::Close() {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:()$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::$	tags	/^CppLinuxSerial::SerialPort::SetTimeout	SerialPort.cpp	\/^void SerialPort::SetTimeout(int32_t timeout_ms) {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:(int32_t timeout_ms)$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::$	tags	/^CppLinuxSerial::SerialPort::Available	SerialPort.cpp	\/^int32_t SerialPort::Available() {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:()$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::$	tags	/^CppLinuxSerial::SerialPort::GetState	SerialPort.cpp	\/^State SerialPort::GetState() {$\/;"	f	class:CppLinuxSerial::SerialPort	signature:()$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial	tags	/^CppLinuxSerial	SerialPort.hpp	\/^namespace CppLinuxSerial {$\/;"	n$/;"	n	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::$	tags	/^CppLinuxSerial	SerialPort.hpp	\/^namespace CppLinuxSerial {$\/;"	n$/;"	m	namespace:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial	file:
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType	tags	/^CppLinuxSerial::BaudRateType	SerialPort.hpp	\/^enum class BaudRateType {$\/;"	c	namespace:CppLinuxSerial$/;"	c	namespace:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial	file:
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::$	tags	/^CppLinuxSerial::BaudRateType	SerialPort.hpp	\/^enum class BaudRateType {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::$	tags	/^CppLinuxSerial::BaudRate	SerialPort.hpp	\/^enum class BaudRate {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::$	tags	/^CppLinuxSerial::NumDataBits	SerialPort.hpp	\/^enum class NumDataBits {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18::$	tags	/^CppLinuxSerial::Parity	SerialPort.hpp	\/^enum class Parity {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18::__anon19::$	tags	/^CppLinuxSerial::NumStopBits	SerialPort.hpp	\/^enum class NumStopBits {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18::__anon19	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18::__anon19::__anon20::$	tags	/^CppLinuxSerial::State	SerialPort.hpp	\/^enum class State {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18::__anon19::__anon20	file:	access:private
+CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18::__anon19::__anon20::__anon21::$	tags	/^CppLinuxSerial::SerialPort	SerialPort.hpp	\/^class SerialPort {$\/;"	c	namespace:CppLinuxSerial$/;"	m	class:CppLinuxSerial::__anon1::__anon2::__anon3::__anon4::__anon5::__anon6::__anon7::__anon8::__anon9::__anon10::__anon11::__anon12::__anon13::__anon14::__anon15::CppLinuxSerial::BaudRateType::__anon16::__anon17::__anon18::__anon19::__anon20::__anon21	file:	access:private
+EIGHT	SerialPort.hpp	/^    EIGHT,$/;"	m	class:CppLinuxSerial::NumDataBits	access:private
+EVEN	SerialPort.hpp	/^    EVEN,$/;"	m	class:CppLinuxSerial::Parity	access:private
+Exception	Exception.hpp	/^    Exception(const char *file, int line, const std::string &arg) :$/;"	f	class:CppLinuxSerial::Exception	access:public	signature:(const char *file, int line, const std::string &arg)
+Exception	Exception.hpp	/^class Exception : public std::runtime_error {$/;"	c	namespace:CppLinuxSerial	inherits:std::runtime_error
+FIVE	SerialPort.hpp	/^    FIVE,$/;"	m	class:CppLinuxSerial::NumDataBits	access:private
+GetState	SerialPort.cpp	/^State SerialPort::GetState() {$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+GetTermios2	SerialPort.cpp	/^termios2 SerialPort::GetTermios2()$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+MN_CPP_LINUX_SERIAL_EXCEPTION_H_	Exception.hpp	12;"	d
+NONE	SerialPort.hpp	/^    NONE,$/;"	m	class:CppLinuxSerial::Parity	access:private
+NumDataBits	SerialPort.hpp	/^enum class NumDataBits {$/;"	c	namespace:CppLinuxSerial
+NumStopBits	SerialPort.hpp	/^enum class NumStopBits {$/;"	c	namespace:CppLinuxSerial
+ODD	SerialPort.hpp	/^    ODD,$/;"	m	class:CppLinuxSerial::Parity	access:private
+ONE	SerialPort.hpp	/^    ONE,$/;"	m	class:CppLinuxSerial::NumStopBits	access:private
+OPEN	SerialPort.hpp	/^    OPEN,$/;"	m	class:CppLinuxSerial::State	access:private
+Open	SerialPort.cpp	/^void SerialPort::Open()$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+Parity	SerialPort.hpp	/^enum class Parity {$/;"	c	namespace:CppLinuxSerial
+Read	SerialPort.cpp	/^void SerialPort::Read(std::string& data)$/;"	f	class:CppLinuxSerial::SerialPort	signature:(std::string& data)
+ReadBinary	SerialPort.cpp	/^void SerialPort::ReadBinary(std::vector<uint8_t>& data)$/;"	f	class:CppLinuxSerial::SerialPort	signature:(std::vector<uint8_t>& data)
+SERIAL_PORT_SERIAL_PORT_H	SerialPort.hpp	12;"	d
+SEVEN	SerialPort.hpp	/^    SEVEN,$/;"	m	class:CppLinuxSerial::NumDataBits	access:private
+SIX	SerialPort.hpp	/^    SIX,$/;"	m	class:CppLinuxSerial::NumDataBits	access:private
+STANDARD	SerialPort.hpp	/^    STANDARD,$/;"	m	class:CppLinuxSerial::BaudRateType	access:private
+SerialPort	SerialPort.cpp	/^SerialPort::SerialPort() {$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
+SerialPort	SerialPort.cpp	/^SerialPort::SerialPort(const std::string& device, BaudRate baudRate) :$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& device, BaudRate baudRate)
+SerialPort	SerialPort.cpp	/^SerialPort::SerialPort(const std::string& device, BaudRate baudRate, NumDataBits numDataBits, Parity parity, NumStopBits numStopBits) :$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& device, BaudRate baudRate, NumDataBits numDataBits, Parity parity, NumStopBits numStopBits)
+SerialPort	SerialPort.cpp	/^SerialPort::SerialPort(const std::string& device, speed_t baudRate) :$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& device, speed_t baudRate)
+SerialPort	SerialPort.hpp	/^class SerialPort {$/;"	c	namespace:CppLinuxSerial
+SetBaudRate	SerialPort.cpp	/^void SerialPort::SetBaudRate(BaudRate baudRate)	{		$/;"	f	class:CppLinuxSerial::SerialPort	signature:(BaudRate baudRate)
+SetBaudRate	SerialPort.cpp	/^void SerialPort::SetBaudRate(speed_t baudRate)	{		$/;"	f	class:CppLinuxSerial::SerialPort	signature:(speed_t baudRate)
+SetDevice	SerialPort.cpp	/^void SerialPort::SetDevice(const std::string& device) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& device)
+SetEcho	SerialPort.cpp	/^void SerialPort::SetEcho(bool value) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(bool value)
+SetNumDataBits	SerialPort.cpp	/^void SerialPort::SetNumDataBits(NumDataBits numDataBits) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(NumDataBits numDataBits)
+SetNumStopBits	SerialPort.cpp	/^void SerialPort::SetNumStopBits(NumStopBits numStopBits) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(NumStopBits numStopBits)
+SetParity	SerialPort.cpp	/^void SerialPort::SetParity(Parity parity) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(Parity parity)
+SetTermios2	SerialPort.cpp	/^void SerialPort::SetTermios2(termios2 tty)$/;"	f	class:CppLinuxSerial::SerialPort	signature:(termios2 tty)
+SetTimeout	SerialPort.cpp	/^void SerialPort::SetTimeout(int32_t timeout_ms) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(int32_t timeout_ms)
+State	SerialPort.hpp	/^enum class State {$/;"	c	namespace:CppLinuxSerial
+THROW_EXCEPT	Exception.hpp	42;"	d
+TWO	SerialPort.hpp	/^    TWO,$/;"	m	class:CppLinuxSerial::NumStopBits	access:private
+Write	SerialPort.cpp	/^void SerialPort::Write(const std::string& data) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::string& data)
+WriteBinary	SerialPort.cpp	/^    void SerialPort::WriteBinary(const std::vector<uint8_t>& data) {$/;"	f	class:CppLinuxSerial::SerialPort	signature:(const std::vector<uint8_t>& data)
+ascii2int	Serial.cpp	/^int ascii2int(const std::string& ascii)$/;"	f	signature:(const std::string& ascii)
+base	RW5R.py	/^base = object$/;"	v
+baudRateCustom_	SerialPort.hpp	/^    speed_t baudRateCustom_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+baudRateStandard_	SerialPort.hpp	/^    BaudRate baudRateStandard_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+baudRateType_	SerialPort.hpp	/^    BaudRateType baudRateType_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+checksum	Serial.cpp	/^std::string checksum(const std::string& data)$/;"	f	signature:(const std::string& data)
+construct_read_command	Serial.cpp	/^std::string construct_read_command(int command)$/;"	f	signature:(int command)
+construct_write_command	Serial.cpp	/^std::string construct_write_command(int command, int data)$/;"	f	signature:(int command, int data)
+defaultBaudRate_	SerialPort.hpp	/^    static constexpr BaudRate defaultBaudRate_ = BaudRate::B_57600;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+defaultReadBufferSize_B_	SerialPort.hpp	/^    static constexpr unsigned char defaultReadBufferSize_B_ = 255;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+defaultTimeout_ms_	SerialPort.hpp	/^    static constexpr int32_t defaultTimeout_ms_ = -1;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+device_	SerialPort.hpp	/^    std::string device_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+echo_	SerialPort.hpp	/^    bool echo_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+fileDesc_	SerialPort.hpp	/^    int fileDesc_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+format	tags	/^!_TAG_FILE_FORMAT	2	\/extended format; --format=1 will not append ;" to lines\/$/;"	v
+h	serial_x64	/^ELF/;"	v
+int2ascii	Serial.cpp	/^std::string int2ascii(int data)$/;"	f	signature:(int data)
+int2ascii	Serial.cpp	/^void int2ascii(int lval, char *str)$/;"	f	signature:(int lval, char *str)
+main	Serial.cpp	/^int main()$/;"	f	signature:()
+msg_	Exception.hpp	/^    std::string msg_;$/;"	m	class:CppLinuxSerial::Exception	access:private
+numDataBits_	SerialPort.hpp	/^    NumDataBits numDataBits_ = NumDataBits::EIGHT;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+numStopBits_	SerialPort.hpp	/^    NumStopBits numStopBits_ = NumStopBits::ONE;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+parity_	SerialPort.hpp	/^    Parity parity_ = Parity::NONE;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+readBufferSize_B_	SerialPort.hpp	/^    unsigned char readBufferSize_B_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+readBuffer_	SerialPort.hpp	/^    std::vector<char> readBuffer_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+state_	SerialPort.hpp	/^    State state_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+test_ascii2int	Serial.cpp	/^void test_ascii2int()$/;"	f	signature:()
+test_checksum	Serial.cpp	/^void test_checksum(void)$/;"	f	signature:(void)
+test_construct_command	Serial.cpp	/^void test_construct_command()$/;"	f	signature:()
+test_int8ascii	Serial.cpp	/^void test_int8ascii(void)$/;"	f	signature:(void)
+timeout_ms_	SerialPort.hpp	/^    int32_t timeout_ms_;$/;"	m	class:CppLinuxSerial::SerialPort	access:private
+~Exception	Exception.hpp	/^    ~Exception() throw() {}$/;"	f	class:CppLinuxSerial::Exception	access:public	signature:()
+~SerialPort	SerialPort.cpp	/^SerialPort::~SerialPort() {$/;"	f	class:CppLinuxSerial::SerialPort	signature:()
