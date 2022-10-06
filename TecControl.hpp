@@ -9,14 +9,13 @@
 #define TEC_CONTROL_H_
 
 #include <sstream>
-#include <vector>
-
-namespace TecControl {
+#include <map>
+#include "SerialPort.hpp"
 
 enum
 {
-    Input1 = 0,
-    DesiredControlValue = 1,
+    Input1 = 1,
+    DesiredControlValue = 2,
     PowerOutput = 3,
     AlarmStatus = 4,
     AlarmType = 5,
@@ -44,40 +43,39 @@ enum
 
 struct TecControlTable_t
 {
-    int id;
     int write;
     int read;
 };
 
-std::vector<TecControlTable_t> TecControlTable
+std::map<int, TecControlTable_t> TecControlTable
 {
-     {Input1,                       TNA,    0x01}
-    ,{DesiredControlValue,          TNA,    0x03}
-    ,{PowerOutput,                  TNA,    0x04} 
-    ,{AlarmStatus,                  TNA,    0x05}
-    ,{AlarmType,                    0x28,   0x42} 
-    ,{ControlType,                  0x2b,   0x44} 
-    ,{ControlOutputPolarity,        0x2c,   0x45} 
-    ,{PowerOnOff,                   0x2d,   0x46} 
-    ,{OutputShutdownIfAlarm,        0x2e,   0x47} 
-    ,{FixedDesiredControlSetting,   0x1e,   0x50}
-    ,{ProportionalBandwidth,        0x1d,   0x51}
-    ,{IngegralGain,                 0x1e,   0x52}
-    ,{DerivativeGain,               0x1f,   0x52}
-    ,{AlarmDeadband,                0x22,   0x56}
-    ,{HighAlarmSetting,             0x23,   0x57}
-    ,{LowAlarmSetting,              0x24,   0x58}
-    ,{ControlDeadbandSetting,       0x25,   0x59}
-    ,{Reference,                    0x26,   0x5a}
-    ,{Input1Offset,                 0x27,   0x5b}
-    ,{AlarmLatchEnable,             0x2f,   0x48}
-    ,{ControlTimebase,              0x30,   0x49}
-    ,{AlarmLatchReset,              0x33,   TNA }
-    ,{HeatMultlpier,                0x0c,   0x5c}
-    ,{ChooseTempWorkingUnits,       0x32,   0x4b}
+     { Input1,                      { TNA,    0x01 } }
+    ,{ DesiredControlValue,         { TNA,    0x03 } }
+    ,{ PowerOutput,                 { TNA,    0x04 } }
+    ,{ AlarmStatus,                 { TNA,    0x05 } }
+    ,{ AlarmType,                   { 0x28,   0x42 } }
+    ,{ ControlType,                 { 0x2b,   0x44 } }
+    ,{ ControlOutputPolarity,       { 0x2c,   0x45 } }
+    ,{ PowerOnOff,                  { 0x2d,   0x46 } }
+    ,{ OutputShutdownIfAlarm,       { 0x2e,   0x47 } }
+    ,{ FixedDesiredControlSetting,  { 0x1e,   0x50 } }
+    ,{ ProportionalBandwidth,       { 0x1d,   0x51 } }
+    ,{ IngegralGain,                { 0x1e,   0x52 } }
+    ,{ DerivativeGain,              { 0x1f,   0x52 } }
+    ,{ AlarmDeadband,               { 0x22,   0x56 } }
+    ,{ HighAlarmSetting,            { 0x23,   0x57 } }
+    ,{ LowAlarmSetting,             { 0x24,   0x58 } }
+    ,{ ControlDeadbandSetting,      { 0x25,   0x59 } }
+    ,{ Reference,                   { 0x26,   0x5a } }
+    ,{ Input1Offset,                { 0x27,   0x5b } }
+    ,{ AlarmLatchEnable,            { 0x2f,   0x48 } }
+    ,{ ControlTimebase,             { 0x30,   0x49 } }
+    ,{ AlarmLatchReset,             { 0x33,   TNA  } }
+    ,{ HeatMultlpier,               { 0x0c,   0x5c } }
+    ,{ ChooseTempWorkingUnits,      { 0x32,   0x4b } }
 };
 
-static std::string checksum(const std::string& data)
+std::string checksum(const std::string& data)
 {
     int cksum = 0;
     for(unsigned int i = 0; i < data.size(); i++)
@@ -88,7 +86,7 @@ static std::string checksum(const std::string& data)
     return sstream.str();
 }
 
-static std::string int2ascii(int data)
+std::string int2ascii(int data)
 {
     std::string ret = "00000000";
     std::stringstream ss;
@@ -101,7 +99,7 @@ static std::string int2ascii(int data)
     return ret;
 }
 
-static void int2ascii(int lval, char *str)
+void int2ascii(int lval, char *str)
 {
     unsigned int ans, leftover, tempb, tempd;
 
@@ -124,17 +122,24 @@ static void int2ascii(int lval, char *str)
     *str = 0;
 }
 
-static int ascii2int(const std::string& ascii)
+int ascii2int(const std::string& ascii)
 {
     int ret;
-    std::string data = ascii.substr(1,8);
-    std::stringstream ss;
-    ss << std::hex << data;
-    ss >> ret;
+    try
+    {
+        std::string data = ascii.substr(1,8);
+        std::stringstream ss;
+        ss << std::hex << data;
+        ss >> ret;
+    }
+    catch(...)
+    {
+        std::cout << "response ascii is invalid." << std::endl;
+    }
     return ret;
 }
 
-static std::string construct_write_command(int command, int data)
+std::string WriteCommandStr(int command, int data)
 {
     const std::string stx = "*";
     const std::string etx = "\r";
@@ -145,10 +150,12 @@ static std::string construct_write_command(int command, int data)
     cc = "00" + cc;
     auto dd = int2ascii(data);
     auto cs = checksum(cc + dd);
-    return stx + cc + dd + cs + etx;
+    std::string ret = stx + cc + dd + cs + etx;
+    std::cout << "write command: " << ret << std::endl;
+    return ret;
 }
 
-static std::string construct_read_command(int command)
+std::string ReadCommandStr(int command)
 {
     const std::string stx = "*";
     const std::string etx = "\r";
@@ -159,9 +166,57 @@ static std::string construct_read_command(int command)
     cc = "00" + cc;
     auto dd = int2ascii(0);
     auto cs = checksum(cc + dd);
-    return stx + cc + dd + cs + etx;
+    std::string ret = stx + cc + dd + cs + etx;
+    std::cout << " read command: " << ret << std::endl;
+    return ret;
 }
 
-}
+using namespace CppLinuxSerial;
+
+class TecControl
+{
+    public:
+        TecControl()
+        {
+            SerialPort serialPort(
+                    "/dev/ttyS12",
+                    BaudRate::B_9600,
+                    NumDataBits::EIGHT,
+                    Parity::NONE,
+                    NumStopBits::ONE
+            );
+
+            m_uart = serialPort;
+        }
+
+        int ReadTec(int command)
+        {
+            std::string datastr;
+            std::string cmd = ReadCommandStr(command);
+            std::cout << __func__ << ": command:  " << cmd << std::endl;
+            m_uart.Write(cmd);
+            m_uart.Read(datastr);
+            std::cout << __func__ << ": response: " << datastr << std::endl;
+            int ret = ascii2int(datastr);
+            std::cout << __func__ << ": result:   " << ret << std::endl;
+            return ret;
+        }
+
+        int WriteTec(int command, int data)
+        {
+            std::string datastr;
+            std::string cmd = WriteCommandStr(command, data);
+            std::cout << __func__ << ": command:  " << cmd << std::endl;
+            m_uart.Write(cmd);
+            m_uart.Read(datastr);
+            std::cout << __func__ << ": response: " << datastr << std::endl;
+            int ret = ascii2int(datastr);
+            std::cout << __func__ << ": result:   " << ret << std::endl;
+            return ret;
+        }
+
+    private:
+        SerialPort m_uart;
+};
 
 #endif
