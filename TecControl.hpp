@@ -12,6 +12,8 @@
 #include <map>
 #include "SerialPort.hpp"
 
+#define HARDWARE_ENABLE 0
+
 enum
 {
     Input1 = 1,
@@ -25,7 +27,7 @@ enum
     OutputShutdownIfAlarm = 9,
     FixedDesiredControlSetting = 10,
     ProportionalBandwidth = 11,
-    IngegralGain = 12,
+    IntegralGain = 12,
     DerivativeGain = 13,
     AlarmDeadband = 14,
     HighAlarmSetting = 15,
@@ -60,7 +62,7 @@ std::map<int, TecControlTable_t> TecControlTable
     ,{ OutputShutdownIfAlarm,       { 0x2e,   0x47 } }
     ,{ FixedDesiredControlSetting,  { 0x1e,   0x50 } }
     ,{ ProportionalBandwidth,       { 0x1d,   0x51 } }
-    ,{ IngegralGain,                { 0x1e,   0x52 } }
+    ,{ IntegralGain,                { 0x1e,   0x52 } }
     ,{ DerivativeGain,              { 0x1f,   0x52 } }
     ,{ AlarmDeadband,               { 0x22,   0x56 } }
     ,{ HighAlarmSetting,            { 0x23,   0x57 } }
@@ -178,6 +180,7 @@ class TecControl
     public:
         TecControl()
         {
+#if (HARDWARE_ENABLE == 1)
             SerialPort serialPort(
                     "/dev/ttyS12",
                     BaudRate::B_9600,
@@ -187,36 +190,111 @@ class TecControl
             );
 
             m_uart = serialPort;
+#endif
         }
 
-        int ReadTec(int command)
+        double ReadTec(int command)
         {
-            std::string datastr;
-            std::string cmd = ReadCommandStr(command);
-            std::cout << __func__ << ": command:  " << cmd << std::endl;
-            m_uart.Write(cmd);
-            m_uart.Read(datastr);
-            std::cout << __func__ << ": response: " << datastr << std::endl;
-            int ret = ascii2int(datastr);
-            std::cout << __func__ << ": result:   " << ret << std::endl;
+            std::string cmd = ReadCommandStr(TecControlTable[IntegralGain].read);
+            int ret = TecWriteRead(cmd);
+
+            switch(command)
+            {
+                case Input1:                    
+                case DesiredControlValue:       
+                case FixedDesiredControlSetting:
+                case ProportionalBandwidth:     
+                case IntegralGain:              
+                case DerivativeGain:            
+                case HighAlarmSetting:          
+                case LowAlarmSetting:           
+                case HeatMultlpier:             
+                    ret /= 100.0;
+                    break;
+
+                case AlarmDeadband:             
+                case PowerOutput:               
+                case AlarmStatus:               
+                case AlarmType:                 
+                case ControlType:               
+                case ControlOutputPolarity:     
+                case PowerOnOff:                
+                case OutputShutdownIfAlarm:     
+                case ControlDeadbandSetting:    
+                case Reference:                 
+                case Input1Offset:              
+                case AlarmLatchEnable:          
+                case ControlTimebase:           
+                case AlarmLatchReset:           
+                case ChooseTempWorkingUnits:    
+                    break;
+
+                default:
+                    break;
+            }
+
             return ret;
         }
 
-        int WriteTec(int command, int data)
+        double WriteTec(int command, double data)
         {
-            std::string datastr;
-            std::string cmd = WriteCommandStr(command, data);
-            std::cout << __func__ << ": command:  " << cmd << std::endl;
-            m_uart.Write(cmd);
-            m_uart.Read(datastr);
-            std::cout << __func__ << ": response: " << datastr << std::endl;
-            int ret = ascii2int(datastr);
-            std::cout << __func__ << ": result:   " << ret << std::endl;
+            switch(command)
+            {
+                case Input1:                    
+                case DesiredControlValue:       
+                case FixedDesiredControlSetting:
+                case ProportionalBandwidth:     
+                case IntegralGain:              
+                case DerivativeGain:            
+                case HighAlarmSetting:          
+                case LowAlarmSetting:           
+                case HeatMultlpier:             
+                    data *= 100;
+                    break;
+
+                case AlarmDeadband:             
+                case PowerOutput:               
+                case AlarmStatus:               
+                case AlarmType:                 
+                case ControlType:               
+                case ControlOutputPolarity:     
+                case PowerOnOff:                
+                case OutputShutdownIfAlarm:     
+                case ControlDeadbandSetting:    
+                case Reference:                 
+                case Input1Offset:              
+                case AlarmLatchEnable:          
+                case ControlTimebase:           
+                case AlarmLatchReset:           
+                case ChooseTempWorkingUnits:    
+                    break;
+
+                default:
+                    break;
+            }
+
+            std::string cmd = WriteCommandStr(TecControlTable[command].write, data);
+            double ret = TecWriteRead(cmd);
             return ret;
         }
 
     private:
         SerialPort m_uart;
+
+        int TecWriteRead(const std::string& cmd)
+        {
+            std::string datastr;
+            std::cout << __func__ << ": command:  " << cmd << std::endl;
+#if (HARDWARE_ENABLE == 1)
+            m_uart.Write(cmd);
+            m_uart.Read(datastr);
+#endif
+            std::cout << __func__ << ": response: " << datastr << std::endl;
+            int ret = ascii2int(datastr);
+            std::cout << __func__ << ": result:   " << ret << std::endl;
+            return ret;
+        }
+
 };
 
 #endif
