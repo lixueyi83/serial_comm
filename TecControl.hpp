@@ -188,6 +188,8 @@ class TecControl
                         NumStopBits::ONE
                 );
                 m_uart = serialPort;
+                serialPort.SetTimeout(-1); // Block when reading until any data is received
+                serialPort.Open();
             } catch (...) {
                 std::cout << "Open device \"" << m_dev << "\" failed" << std::endl;
             }
