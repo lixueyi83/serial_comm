@@ -12,8 +12,6 @@
 #include <map>
 #include "SerialPort.hpp"
 
-#define HARDWARE_ENABLE 0
-
 enum
 {
     Input1 = 1,
@@ -179,18 +177,20 @@ class TecControl
 {
     public:
         TecControl()
+            : m_dev("/dev/ttyS12")
         {
-#if (HARDWARE_ENABLE == 1)
-            SerialPort serialPort(
-                    "/dev/ttyS12",
-                    BaudRate::B_9600,
-                    NumDataBits::EIGHT,
-                    Parity::NONE,
-                    NumStopBits::ONE
-            );
-
-            m_uart = serialPort;
-#endif
+            try{
+                SerialPort serialPort(
+                        m_dev,
+                        BaudRate::B_9600,
+                        NumDataBits::EIGHT,
+                        Parity::NONE,
+                        NumStopBits::ONE
+                );
+                m_uart = serialPort;
+            } catch (...) {
+                std::cout << "Open device \"" << m_dev << "\" failed" << std::endl;
+            }
         }
 
         double ReadTec(int command)
@@ -279,16 +279,19 @@ class TecControl
         }
 
     private:
+        std::string m_dev;
         SerialPort m_uart;
 
         int TecWriteRead(const std::string& cmd)
         {
             std::string datastr;
             std::cout << __func__ << ": command:  " << cmd << std::endl;
-#if (HARDWARE_ENABLE == 1)
-            m_uart.Write(cmd);
-            m_uart.Read(datastr);
-#endif
+            try{
+                m_uart.Write(cmd);
+                m_uart.Read(datastr);
+            } catch (...) {
+                std::cout << "Write/Read device \" " << m_dev << "\" failed" << std::endl; 
+            }
             std::cout << __func__ << ": response: " << datastr << std::endl;
             int ret = ascii2int(datastr);
             std::cout << __func__ << ": result:   " << ret << std::endl;
