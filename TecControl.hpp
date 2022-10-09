@@ -10,7 +10,10 @@
 
 #include <sstream>
 #include <map>
+#include <memory>
 #include "SerialPort.hpp"
+
+namespace TecControlProtocol {
 
 enum
 {
@@ -49,7 +52,7 @@ struct TecControlTable_t
 
 std::map<int, TecControlTable_t> TecControlTable
 {
-     { Input1,                      { TNA,    0x01 } }
+    { Input1,                      { TNA,    0x01 } }
     ,{ DesiredControlValue,         { TNA,    0x03 } }
     ,{ PowerOutput,                 { TNA,    0x04 } }
     ,{ AlarmStatus,                 { TNA,    0x05 } }
@@ -75,102 +78,6 @@ std::map<int, TecControlTable_t> TecControlTable
     ,{ ChooseTempWorkingUnits,      { 0x32,   0x4b } }
 };
 
-std::string checksum(const std::string& data)
-{
-    int cksum = 0;
-    for(unsigned int i = 0; i < data.size(); i++)
-        cksum += data[i];
-    cksum %= 256;
-    std::stringstream sstream;
-    sstream << std::hex << cksum;
-    return sstream.str();
-}
-
-std::string int2ascii(int data)
-{
-    std::string ret = "00000000";
-    std::stringstream ss;
-    std::string dd;
-    ss << std::hex << data;
-    ss >> dd;
-
-    int i = 8, j = dd.length();
-    while(j-- && i--) ret[i] = dd[j];
-    return ret;
-}
-
-void int2ascii(int lval, char *str)
-{
-    unsigned int ans, leftover, tempb, tempd;
-
-    ans = lval;
-    while(*str) str++;
-    tempb = 0x10000000;
-
-    for (int i = 0; i<8; i++)
-    {
-        leftover = ans % tempb;
-        tempd = (ans / tempb);
-        if (tempd<10)
-            *str = tempd + '0';
-        else
-            *str = (tempd - 10) + 'a';
-        ans = leftover;
-        tempb = tempb / 16; // shift right 4-bits
-        str++;
-    }
-    *str = 0;
-}
-
-int ascii2int(const std::string& ascii)
-{
-    int ret;
-    try
-    {
-        std::string data = ascii.substr(1,8);
-        std::stringstream ss;
-        ss << std::hex << data;
-        ss >> ret;
-    }
-    catch(...)
-    {
-        std::cout << "response ascii is invalid." << std::endl;
-    }
-    return ret;
-}
-
-std::string WriteCommandStr(int command, int data)
-{
-    const std::string stx = "*";
-    const std::string etx = "\r";
-    std::string cc;
-    std::stringstream ss;
-    ss << std::hex << command;
-    ss >> cc;
-    cc = "00" + cc;
-    auto dd = int2ascii(data);
-    auto cs = checksum(cc + dd);
-    std::string ret = stx + cc + dd + cs + etx;
-    std::cout << "write command: " << ret << std::endl;
-    return ret;
-}
-
-std::string ReadCommandStr(int command)
-{
-    const std::string stx = "*";
-    const std::string etx = "\r";
-    std::stringstream ss;
-    std::string cc;
-    ss << std::hex << command;
-    ss >> cc;
-    cc = "00" + cc;
-    auto dd = int2ascii(0);
-    auto cs = checksum(cc + dd);
-    std::string ret = stx + cc + dd + cs + etx;
-    std::cout << " read command: " << ret << std::endl;
-    return ret;
-}
-
 using namespace CppLinuxSerial;
 
 class TecControl
@@ -178,22 +85,24 @@ class TecControl
     public:
         TecControl()
             : m_dev("/dev/ttyS12")
+            // , m_log("TecControlSerial.log")
         {
             try{
-                SerialPort serialPort(
+                m_serial = std::make_shared<SerialPort>(
                         m_dev,
                         BaudRate::B_9600,
                         NumDataBits::EIGHT,
                         Parity::NONE,
                         NumStopBits::ONE
-                );
-                m_uart = serialPort;
-                serialPort.SetTimeout(-1); // Block when reading until any data is received
-                serialPort.Open();
+                    );
+                m_serial->SetTimeout(-1); // Block when reading until any data is received
+                m_serial->Open();
             } catch (...) {
                 std::cout << "Open device \"" << m_dev << "\" failed" << std::endl;
             }
         }
+
+        ~TecControl() { m_serial->Close(); }
 
         double ReadTec(int command)
         {
@@ -281,25 +190,122 @@ class TecControl
         }
 
     private:
+        std::string checksum(const std::string& data)
+        {
+            int cksum = 0;
+            for(unsigned int i = 0; i < data.size(); i++)
+                cksum += data[i];
+            cksum %= 256;
+            std::stringstream sstream;
+            sstream << std::hex << cksum;
+            return sstream.str();
+        }
+
+        std::string int2ascii(int data)
+        {
+            std::string ret = "00000000";
+            std::stringstream ss;
+            std::string dd;
+            ss << std::hex << data;
+            ss >> dd;
+
+            int i = 8, j = dd.length();
+            while(j-- && i--) ret[i] = dd[j];
+            return ret;
+        }
+
+        void int2ascii(int lval, char *str)
+        {
+            unsigned int ans, leftover, tempb, tempd;
+
+            ans = lval;
+            while(*str) str++;
+            tempb = 0x10000000;
+
+            for (int i = 0; i<8; i++)
+            {
+                leftover = ans % tempb;
+                tempd = (ans / tempb);
+                if (tempd<10)
+                    *str = tempd + '0';
+                else
+                    *str = (tempd - 10) + 'a';
+                ans = leftover;
+                tempb = tempb / 16; // shift right 4-bits
+                str++;
+            }
+            *str = 0;
+        }
+
+        int ascii2int(const std::string& ascii)
+        {
+            int ret;
+            try
+            {
+                std::string data = ascii.substr(1,8);
+                std::stringstream ss;
+                ss << std::hex << data;
+                ss >> ret;
+            }
+            catch(...)
+            {
+                std::cout << "response ascii is invalid." << std::endl;
+            }
+            return ret;
+        }
+
+        std::string WriteCommandStr(int command, int data)
+        {
+            const std::string stx = "*";
+            const std::string etx = "\r";
+            std::string cc;
+            std::stringstream ss;
+            ss << std::hex << command;
+            ss >> cc;
+            cc = "00" + cc;
+            auto dd = int2ascii(data);
+            auto cs = checksum(cc + dd);
+            std::string ret = stx + cc + dd + cs + etx;
+            return ret;
+        }
+
+        std::string ReadCommandStr(int command)
+        {
+            const std::string stx = "*";
+            const std::string etx = "\r";
+            std::stringstream ss;
+            std::string cc;
+            ss << std::hex << command;
+            ss >> cc;
+            cc = "00" + cc;
+            auto dd = int2ascii(0);
+            auto cs = checksum(cc + dd);
+            std::string ret = stx + cc + dd + cs + etx;
+            return ret;
+        }
+
+    private:
         std::string m_dev;
-        SerialPort m_uart;
+        std::shared_ptr<SerialPort> m_serial;
+        std::ofstream m_log;
 
         int TecWriteRead(const std::string& cmd)
         {
             std::string datastr;
-            std::cout << __func__ << ": command:  " << cmd << std::endl;
             try{
-                m_uart.Write(cmd);
-                m_uart.Read(datastr);
+                m_serial->Write(cmd);
+                std::cout << __func__ << " write:" << cmd << std::endl;
+                m_serial->Read(datastr);
+                std::cout << __func__ << " read:" << datastr << std::endl;
             } catch (...) {
                 std::cout << "Write/Read device \" " << m_dev << "\" failed" << std::endl; 
             }
-            std::cout << __func__ << ": response: " << datastr << std::endl;
             int ret = ascii2int(datastr);
             std::cout << __func__ << ": result:   " << ret << std::endl;
             return ret;
         }
+}; // class TecControl
 
-};
+} // namespace TecControlProtocol
 
-#endif
+#endif // TEC_CONTROL_H_
