@@ -50,7 +50,25 @@ int main()
 
     TecControlProtocol::TecControl uart; 
 	std::cout << uart.ReadTec(TecControlProtocol::IntegralGain) << std::endl;
+	std::cout << uart.WriteTec(TecControlProtocol::IntegralGain, 1.1) << std::endl;
+
+	std::cout << uart.ReadTec(TecControlProtocol::IntegralGain) << std::endl;
 	std::cout << uart.WriteTec(TecControlProtocol::IntegralGain, 2.2) << std::endl;
+
+	std::cout << uart.ReadTec(TecControlProtocol::IntegralGain) << std::endl;
+	std::cout << uart.WriteTec(TecControlProtocol::IntegralGain, 3.3) << std::endl;
+
+	std::cout << uart.ReadTec(TecControlProtocol::IntegralGain) << std::endl;
+	std::cout << uart.WriteTec(TecControlProtocol::IntegralGain, 4.4) << std::endl;
+
+	std::cout << uart.ReadTec(TecControlProtocol::IntegralGain) << std::endl;
+	std::cout << uart.WriteTec(TecControlProtocol::IntegralGain, 5.0) << std::endl;
+
+	std::cout << uart.ReadTec(TecControlProtocol::IntegralGain) << std::endl;
+	std::cout << uart.WriteTec(TecControlProtocol::IntegralGain, 6.0) << std::endl;
+
+	std::cout << uart.ReadTec(TecControlProtocol::IntegralGain) << std::endl;
+	std::cout << uart.WriteTec(TecControlProtocol::IntegralGain, 7.0) << std::endl;
 
     return 0;
 }

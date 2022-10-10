@@ -295,8 +295,11 @@ class TecControl
             try{
                 m_serial->Write(cmd);
                 std::cout << __func__ << " write:" << cmd << std::endl;
+                std::cout << "Hex: "; for(auto e:cmd) std::cout << std::hex << int(e) << " "; std::cout << std::endl;
+
                 m_serial->Read(datastr);
-                std::cout << __func__ << " read:" << datastr << std::endl;
+                std::cout << __func__ << "  read:" << datastr << std::endl;
+                std::cout << "Hex: "; for(auto e:datastr) std::cout << std::hex << int(e) << " "; std::cout << std::endl;
             } catch (...) {
                 std::cout << "Write/Read device \" " << m_dev << "\" failed" << std::endl; 
             }
