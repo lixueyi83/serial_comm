@@ -502,21 +502,39 @@ void SerialPort::Read(std::string& data)
     // We provide the underlying raw array from the readBuffer_ vector to this C api.
     // This will work because we do not delete/resize the vector while this method
     // is called
-    ssize_t n = read(fileDesc_, &readBuffer_[0], readBufferSize_B_);
+    // ssize_t n = read(fileDesc_, &readBuffer_[0], readBufferSize_B_);
+    
+    // while(readBuffer_[index] != '*') {
+    // len = read(fileDesc_, &readBuffer_[index], 1);
+    // std::cout << "finding the stx of response: ";
+    // std::cout << readBuffer_[index] << std::endl;
+    // }
+    // std::cout << __LINE__ << ": " <<readBuffer_[index] << ", index = " << index << std::endl;
+    // index++;
+    int len, index = 0;
+    while(index < 255)
+    {
+        len = read(fileDesc_, &readBuffer_[index], 1);
+        if(len <= 0 || readBuffer_[index] == 0x5e)
+        {
+            break;
+        }
+        index++;
+    }
 
     // Error Handling
-    if(n < 0) {
+    if(len < 0) {
         // Read was unsuccessful
         throw std::system_error(EFAULT, std::system_category());
     }
 
-    if(n > 0) {
+    if(len > 0) {
 
 //			buf[n] = '\0';
         //printf("%s\r\n", buf);
 //			data.append(buf);
-        data = std::string(&readBuffer_[0], n);
-        //std::cout << *str << " and size of string =" << str->size() << "\r\n";
+        data = std::string(&readBuffer_[0], 13);
+        // std::cout << data << " and size of string =" << data.size() << "\r\n";
     }
 
     // If code reaches here, read must of been successful

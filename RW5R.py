@@ -15,7 +15,7 @@ def build_devices():
 
 class RW5R(base):
 
-    def __init__(self,serialPort,debug=0):
+    def __init__(self,serialPort,debug=1):
         super().__init__()
         self.debug = debug
         self.ser = serial.Serial(serialPort, 9600, timeout=1);
@@ -216,15 +216,15 @@ class RW5R(base):
 if __name__ == "__main__":
 
     controller = RW5R('/dev/ttyS12')
+
     # get four temp reads
-    for p in range (0,4):
-        print (controller.input1)
-    # send the set temperature 
-    # 25.01
-    controller.fixed_desired_control_setting = 25.01
-    # 25.01
-    # verify
-    print (controller.fixed_desired_control_setting);
+    # for p in range (0,4):
+        # print (controller.input1)
+
+    # send the set temperature: 25.01
+    # controller.fixed_desired_control_setting = 25.01
+    # 25.01 verify
+    # print (controller.fixed_desired_control_setting);
 
     integral_gain = controller.integral_gain
     print(integral_gain)

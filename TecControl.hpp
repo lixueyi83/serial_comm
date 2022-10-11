@@ -97,6 +97,7 @@ class TecControl
                     );
                 m_serial->SetTimeout(-1); // Block when reading until any data is received
                 m_serial->Open();
+                // m_serial->Read(m_response);
             } catch (...) {
                 std::cout << "Open device \"" << m_dev << "\" failed" << std::endl;
             }
@@ -106,9 +107,11 @@ class TecControl
 
         double ReadTec(int command)
         {
+            std::cout << "cmd = " << command << std::endl;
             std::string cmd = ReadCommandStr(TecControlTable[IntegralGain].read);
-            int ret = TecWriteRead(cmd);
+            double ret = TecWriteRead(cmd);
 
+            std::cout << "ret = " << ret << std::endl;
             switch(command)
             {
                 case Input1:                    
@@ -143,12 +146,14 @@ class TecControl
                 default:
                     break;
             }
+            std::cout << "ret = " << ret << std::endl;
 
             return ret;
         }
 
         double WriteTec(int command, double data)
         {
+            std::cout << "data = " << data << std::endl;
             switch(command)
             {
                 case Input1:                    
@@ -184,7 +189,9 @@ class TecControl
                     break;
             }
 
+            std::cout << "data = " << data << std::endl;
             std::string cmd = WriteCommandStr(TecControlTable[command].write, data);
+            std::cout << "datastr = " << cmd << std::endl;
             double ret = TecWriteRead(cmd);
             return ret;
         }
@@ -288,18 +295,19 @@ class TecControl
         std::string m_dev;
         std::shared_ptr<SerialPort> m_serial;
         std::ofstream m_log;
+        std::string m_response;
 
         int TecWriteRead(const std::string& cmd)
         {
-            std::string datastr;
+            std::string datastr="";
             try{
                 m_serial->Write(cmd);
                 std::cout << __func__ << " write:" << cmd << std::endl;
-                std::cout << "Hex: "; for(auto e:cmd) std::cout << std::hex << int(e) << " "; std::cout << std::endl;
+                // std::cout << "Hex: "; for(auto e:cmd) std::cout << std::hex << int(e) << " "; std::cout << std::endl;
 
                 m_serial->Read(datastr);
                 std::cout << __func__ << "  read:" << datastr << std::endl;
-                std::cout << "Hex: "; for(auto e:datastr) std::cout << std::hex << int(e) << " "; std::cout << std::endl;
+                // std::cout << "Hex: "; for(auto e:datastr) std::cout << std::hex << int(e) << " "; std::cout << std::endl;
             } catch (...) {
                 std::cout << "Write/Read device \" " << m_dev << "\" failed" << std::endl; 
             }

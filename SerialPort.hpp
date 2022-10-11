@@ -226,7 +226,7 @@ private:
 
     static constexpr BaudRate defaultBaudRate_ = BaudRate::B_57600;
     static constexpr int32_t defaultTimeout_ms_ = -1;
-    static constexpr unsigned char defaultReadBufferSize_B_ = 255;
+    static constexpr unsigned char defaultReadBufferSize_B_ = 12;
 
 
 };
