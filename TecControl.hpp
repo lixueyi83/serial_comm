@@ -13,75 +13,72 @@
 #include <memory>
 #include "SerialPort.hpp"
 
-namespace TecControlProtocol {
-
-enum
-{
-    Input1 = 1,
-    DesiredControlValue = 2,
-    PowerOutput = 3,
-    AlarmStatus = 4,
-    AlarmType = 5,
-    ControlType = 6,
-    ControlOutputPolarity = 7,
-    PowerOnOff = 8,
-    OutputShutdownIfAlarm = 9,
-    FixedDesiredControlSetting = 10,
-    ProportionalBandwidth = 11,
-    IntegralGain = 12,
-    DerivativeGain = 13,
-    AlarmDeadband = 14,
-    HighAlarmSetting = 15,
-    LowAlarmSetting = 16,
-    ControlDeadbandSetting = 17,
-    Reference = 18,
-    Input1Offset = 19,
-    AlarmLatchEnable = 20,
-    ControlTimebase = 21,
-    AlarmLatchReset = 22,
-    HeatMultlpier = 23,
-    ChooseTempWorkingUnits = 24,
-    TNA
-};
-
-struct TecControlTable_t
-{
-    int write;
-    int read;
-};
-
-std::map<int, TecControlTable_t> TecControlTable
-{
-    { Input1,                      { TNA,    0x01 } }
-    ,{ DesiredControlValue,         { TNA,    0x03 } }
-    ,{ PowerOutput,                 { TNA,    0x04 } }
-    ,{ AlarmStatus,                 { TNA,    0x05 } }
-    ,{ AlarmType,                   { 0x28,   0x42 } }
-    ,{ ControlType,                 { 0x2b,   0x44 } }
-    ,{ ControlOutputPolarity,       { 0x2c,   0x45 } }
-    ,{ PowerOnOff,                  { 0x2d,   0x46 } }
-    ,{ OutputShutdownIfAlarm,       { 0x2e,   0x47 } }
-    ,{ FixedDesiredControlSetting,  { 0x1e,   0x50 } }
-    ,{ ProportionalBandwidth,       { 0x1d,   0x51 } }
-    ,{ IntegralGain,                { 0x1e,   0x52 } }
-    ,{ DerivativeGain,              { 0x1f,   0x52 } }
-    ,{ AlarmDeadband,               { 0x22,   0x56 } }
-    ,{ HighAlarmSetting,            { 0x23,   0x57 } }
-    ,{ LowAlarmSetting,             { 0x24,   0x58 } }
-    ,{ ControlDeadbandSetting,      { 0x25,   0x59 } }
-    ,{ Reference,                   { 0x26,   0x5a } }
-    ,{ Input1Offset,                { 0x27,   0x5b } }
-    ,{ AlarmLatchEnable,            { 0x2f,   0x48 } }
-    ,{ ControlTimebase,             { 0x30,   0x49 } }
-    ,{ AlarmLatchReset,             { 0x33,   TNA  } }
-    ,{ HeatMultlpier,               { 0x0c,   0x5c } }
-    ,{ ChooseTempWorkingUnits,      { 0x32,   0x4b } }
-};
-
-using namespace CppLinuxSerial;
-
 class TecControl
 {
+    public:
+        enum
+        {
+            Input1 = 1,
+            DesiredControlValue = 2,
+            PowerOutput = 3,
+            AlarmStatus = 4,
+            AlarmType = 5,
+            ControlType = 6,
+            ControlOutputPolarity = 7,
+            PowerOnOff = 8,
+            OutputShutdownIfAlarm = 9,
+            FixedDesiredControlSetting = 10,
+            ProportionalBandwidth = 11,
+            IntegralGain = 12,
+            DerivativeGain = 13,
+            AlarmDeadband = 14,
+            HighAlarmSetting = 15,
+            LowAlarmSetting = 16,
+            ControlDeadbandSetting = 17,
+            Reference = 18,
+            Input1Offset = 19,
+            AlarmLatchEnable = 20,
+            ControlTimebase = 21,
+            AlarmLatchReset = 22,
+            HeatMultlpier = 23,
+            ChooseTempWorkingUnits = 24,
+            TNA
+        };
+
+        struct TecControlTable_t
+        {
+            int write;
+            int read;
+        };
+
+        std::map<int, TecControlTable_t> TecControlTable
+        {
+            { Input1,                       { TNA,    0x01 } }
+            ,{ DesiredControlValue,         { TNA,    0x03 } }
+            ,{ PowerOutput,                 { TNA,    0x04 } }
+            ,{ AlarmStatus,                 { TNA,    0x05 } }
+            ,{ AlarmType,                   { 0x28,   0x42 } }
+            ,{ ControlType,                 { 0x2b,   0x44 } }
+            ,{ ControlOutputPolarity,       { 0x2c,   0x45 } }
+            ,{ PowerOnOff,                  { 0x2d,   0x46 } }
+            ,{ OutputShutdownIfAlarm,       { 0x2e,   0x47 } }
+            ,{ FixedDesiredControlSetting,  { 0x1e,   0x50 } }
+            ,{ ProportionalBandwidth,       { 0x1d,   0x51 } }
+            ,{ IntegralGain,                { 0x1e,   0x52 } }
+            ,{ DerivativeGain,              { 0x1f,   0x52 } }
+            ,{ AlarmDeadband,               { 0x22,   0x56 } }
+            ,{ HighAlarmSetting,            { 0x23,   0x57 } }
+            ,{ LowAlarmSetting,             { 0x24,   0x58 } }
+            ,{ ControlDeadbandSetting,      { 0x25,   0x59 } }
+            ,{ Reference,                   { 0x26,   0x5a } }
+            ,{ Input1Offset,                { 0x27,   0x5b } }
+            ,{ AlarmLatchEnable,            { 0x2f,   0x48 } }
+            ,{ ControlTimebase,             { 0x30,   0x49 } }
+            ,{ AlarmLatchReset,             { 0x33,   TNA  } }
+            ,{ HeatMultlpier,               { 0x0c,   0x5c } }
+            ,{ ChooseTempWorkingUnits,      { 0x32,   0x4b } }
+        };
+
     public:
         TecControl()
             : m_dev("/dev/ttyS12")
@@ -90,10 +87,10 @@ class TecControl
             try{
                 m_serial = std::make_shared<SerialPort>(
                         m_dev,
-                        BaudRate::B_9600,
-                        NumDataBits::EIGHT,
-                        Parity::NONE,
-                        NumStopBits::ONE
+                        SerialPort::BaudRate::B_9600,
+                        SerialPort::NumDataBits::EIGHT,
+                        SerialPort::Parity::NONE,
+                        SerialPort::NumStopBits::ONE
                     );
                 m_serial->SetTimeout(-1); // Block when reading until any data is received
                 m_serial->Open();
@@ -107,11 +104,8 @@ class TecControl
 
         double ReadTec(int command)
         {
-            std::cout << "cmd = " << command << std::endl;
             std::string cmd = ReadCommandStr(TecControlTable[IntegralGain].read);
             double ret = TecWriteRead(cmd);
-
-            std::cout << "ret = " << ret << std::endl;
             switch(command)
             {
                 case Input1:                    
@@ -146,14 +140,11 @@ class TecControl
                 default:
                     break;
             }
-            std::cout << "ret = " << ret << std::endl;
-
             return ret;
         }
 
         double WriteTec(int command, double data)
         {
-            std::cout << "data = " << data << std::endl;
             switch(command)
             {
                 case Input1:                    
@@ -188,10 +179,7 @@ class TecControl
                 default:
                     break;
             }
-
-            std::cout << "data = " << data << std::endl;
             std::string cmd = WriteCommandStr(TecControlTable[command].write, data);
-            std::cout << "datastr = " << cmd << std::endl;
             double ret = TecWriteRead(cmd);
             return ret;
         }
@@ -302,21 +290,18 @@ class TecControl
             std::string datastr="";
             try{
                 m_serial->Write(cmd);
-                std::cout << __func__ << " write:" << cmd << std::endl;
+                // std::cout << __func__ << " write:" << cmd << std::endl;
                 // std::cout << "Hex: "; for(auto e:cmd) std::cout << std::hex << int(e) << " "; std::cout << std::endl;
 
                 m_serial->Read(datastr);
-                std::cout << __func__ << "  read:" << datastr << std::endl;
+                // std::cout << __func__ << "  read:" << datastr << std::endl;
                 // std::cout << "Hex: "; for(auto e:datastr) std::cout << std::hex << int(e) << " "; std::cout << std::endl;
             } catch (...) {
-                std::cout << "Write/Read device \" " << m_dev << "\" failed" << std::endl; 
+                // std::cout << "Write/Read device \" " << m_dev << "\" failed" << std::endl; 
             }
             int ret = ascii2int(datastr);
-            std::cout << __func__ << ": result:   " << ret << std::endl;
             return ret;
         }
 }; // class TecControl
-
-} // namespace TecControlProtocol
 
 #endif // TEC_CONTROL_H_

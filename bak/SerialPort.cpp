@@ -31,8 +31,6 @@
 
 #define    BOTHER 0010000
 
-namespace CppLinuxSerial {
-
 SerialPort::SerialPort() {
     echo_ = false;
     timeout_ms_ = defaultTimeout_ms_;
@@ -640,5 +638,3 @@ int32_t SerialPort::Available() {
 State SerialPort::GetState() {
     return state_;
 }
-
-} // namespace CppLinuxSerial

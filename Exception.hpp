@@ -17,8 +17,6 @@
 #include <stdexcept>
 #include <string>
 
-namespace CppLinuxSerial {
-
 class Exception : public std::runtime_error {
 
 public:
@@ -36,8 +34,6 @@ public:
 private:
     std::string msg_;
 };
-
-} // namespace CppLinuxSerial
 
 #define THROW_EXCEPT(arg) throw Exception(__FILE__, __LINE__, arg);
 
